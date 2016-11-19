@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-family: fantasy;
+    text-align: center;
+}
+
+h1, h2 {
+    padding: 20px;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.jumbotron>h1 {
+    font-family: 'Bungee Shade', cursive;
+    color: black;
+}
+
+#gameboard {
+    width: auto;
+    /*max-width: 880px;*/
+    border-width: 2px;
+    border-style: dashed;
+}
+
+#status-bar {
+    padding: 20px;
+    font-size: 24px;
+}
