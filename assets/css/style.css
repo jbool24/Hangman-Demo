@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: grey;
     color: white;
     font-size: 20px;
     font-family: monospace;
