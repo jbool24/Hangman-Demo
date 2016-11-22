@@ -17,7 +17,7 @@ function game(guess) {
     if (gameState.currentWord.length === 0) {
         let wd = getWord();
         gameState.currentWord = wd.split("");
-
+        document.getElementById("bender").src = "http://i.giphy.com/F6CU1yok3UMSY.gif"
         //offset first guess of game
         ++gameState.remainingGuesses;
     }
@@ -51,6 +51,7 @@ paintWord();
 
 // Update when user guessed the word----------------------------------------
 if (gameState.currentWord.join(" ") === gameState.formatedWord.join(" ")) {
+    document.getElementById("bender").src = "assets/images/futurama-win.gif"
     gameState.status = "winner";
 }
 
@@ -59,12 +60,23 @@ checkState();
 }
 
 function checkState() {
+    if (gameState.remainingGuesses <= 0){
+      document.getElementById("status-bar").textContent = "Guess a letter to play again.";
+      document.getElementById("current-word").textContent = "   YOU LOSE!!"
+      gameState.currentWord = [];
+      gameState.formatedWord = [];
+      gameState.lettersUsed = [];
+      gameState.status = "";
+      gameState.remainingGuesses = 10;
+    }
+    
     if (gameState.status === "winner") {
         // if winner reset everything
         document.getElementById("status-bar").textContent = "Guess a letter to play again.";
-        document.getElementById("current-word").textContent = "YOU WIN!!"
+        document.getElementById("current-word").textContent = "   YOU WIN!!"
         gameState.currentWord = [];
         gameState.formatedWord = [];
+        gameState.lettersUsed = [];
         gameState.status = "";
         gameState.remainingGuesses = 10;
         ++gameState.wins;
