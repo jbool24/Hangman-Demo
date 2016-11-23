@@ -2,7 +2,7 @@
 
 ##Basic Hangman game
 
-This is a simple demo of DOM modification without the use of jQuery.
+This is a simple demo of DOM manipulation without the use of jQuery.
 To play just press any key to begin then use keyboard to make guesses.
 
 ###Game Requirements
