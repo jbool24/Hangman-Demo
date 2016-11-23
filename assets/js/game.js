@@ -18,8 +18,8 @@ function game(guess) {
         let wd = getWord();
         gameState.currentWord = wd.split("");
         document.getElementById("bender").src = "http://i.giphy.com/F6CU1yok3UMSY.gif"
-        //offset first guess of game
-        ++gameState.remainingGuesses;
+            //offset first guess of game
+            ++gameState.remainingGuesses;
     }
 
     // Step 3 Paint the game area with the letter placeholders------------------
@@ -46,30 +46,30 @@ function game(guess) {
         }
     }
 
-// Step 5  Repaint the game area with updated list--------------------------
-paintWord();
+    // Step 5  Repaint the game area with updated list--------------------------
+    paintWord();
 
-// Update when user guessed the word----------------------------------------
-if (gameState.currentWord.join(" ") === gameState.formatedWord.join(" ")) {
-    document.getElementById("bender").src = "assets/images/futurama-win.gif"
-    gameState.status = "winner";
-}
+    // Update when user guessed the word----------------------------------------
+    if (gameState.currentWord.join(" ") === gameState.formatedWord.join(" ")) {
+        document.getElementById("bender").src = "assets/images/futurama-win.gif"
+        gameState.status = "winner";
+    }
 
-//Check if user has won-----------------------------------------------------
-checkState();
+    //Check if user has won-----------------------------------------------------
+    checkState();
 }
 
 function checkState() {
-    if (gameState.remainingGuesses <= 0){
-      document.getElementById("status-bar").textContent = "Guess a letter to play again.";
-      document.getElementById("current-word").textContent = "   YOU LOSE!!"
-      gameState.currentWord = [];
-      gameState.formatedWord = [];
-      gameState.lettersUsed = [];
-      gameState.status = "";
-      gameState.remainingGuesses = 10;
+    if (gameState.remainingGuesses <= 0) {
+        document.getElementById("status-bar").textContent = "Guess a letter to play again.";
+        document.getElementById("current-word").textContent = "   YOU LOSE!!"
+        gameState.currentWord = [];
+        gameState.formatedWord = [];
+        gameState.lettersUsed = [];
+        gameState.status = "";
+        gameState.remainingGuesses = 10;
     }
-    
+
     if (gameState.status === "winner") {
         // if winner reset everything
         document.getElementById("status-bar").textContent = "Guess a letter to play again.";
