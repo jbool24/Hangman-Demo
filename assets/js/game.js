@@ -19,19 +19,20 @@ function game(guess) {
         gameState.currentWord = wd.split("");
         document.getElementById("bender").src = "http://i.giphy.com/F6CU1yok3UMSY.gif"
             //offset first guess of game
-            ++gameState.remainingGuesses;
+            ++gameState.remainingGuesses; //TODO delete this maybe
     }
 
     // Step 3 Paint the game area with the letter placeholders------------------
     paintWord();
-    --gameState.remainingGuesses;
 
-    // Step 4  Test the users guesses if they guessed it already push it to the list-----
+    // Step 4  Test the user's guesses. If they guessed it already push it to the list-----
     console.log("Guessed: " + guess);
     if (gameState.lettersUsed.indexOf(guess) !== -1) {
         document.getElementById("status-bar").textContent = "You guessed this already. Try again."
     } else {
         gameState.lettersUsed.push(guess);
+
+        --gameState.remainingGuesses;
 
         //FIX ME to include each occurance of correct guess
         if (gameState.currentWord.indexOf(guess) !== -1) {
@@ -40,11 +41,12 @@ function game(guess) {
                     gameState.formatedWord[i] = guess;
                 }
             }
-            // gameState.formatedWord[gameState.currentWord.indexOf(guess)] = guess;
         } else {
-            document.getElementById("status-bar").textContent = "Nope. Guess again. " + gameState.remainingGuesses + " tries left.";
+            document.getElementById("status-bar").textContent = "Nope. Guess again. "
         }
     }
+
+    document.getElementById("remaining").textContent = " " + gameState.remainingGuesses;
 
     // Step 5  Repaint the game area with updated list--------------------------
     paintWord();
