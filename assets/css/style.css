@@ -38,7 +38,7 @@ h1, h2 {
 
 #gameboard {
     width: auto;
-    /*max-width: 880px;*/
+    font-family: serif;
     border-width: 2px;
     border-style: dashed;
 }

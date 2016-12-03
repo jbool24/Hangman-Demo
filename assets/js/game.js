@@ -1,4 +1,4 @@
-let gameState = {
+var gameState = {
     currentWord: [],
     formatedWord: [],
     wins: 0,
@@ -34,7 +34,7 @@ function game(guess) {
 
         --gameState.remainingGuesses;
 
-        //FIX ME to include each occurance of correct guess
+        
         if (gameState.currentWord.indexOf(guess) !== -1) {
             for (var i = 0; i < gameState.formatedWord.length; i++) {
                 if (gameState.currentWord[i] === guess) {
@@ -86,8 +86,8 @@ function checkState() {
 }
 
 function getWord() {
-    let words = ["fry", "leela", "cigars", "beer", "king", "ladies", "money"];
-    let num = Math.floor(Math.random() * words.length);
+    var words = ["fry", "leela", "cigars", "beer", "king", "ladies", "money"];
+    var num = Math.floor(Math.random() * words.length);
     for (var i = 0; i < words[num].length; i++) {
         gameState.formatedWord.push(" ___ ");
     }
@@ -95,7 +95,7 @@ function getWord() {
 }
 
 function paintWord() {
-    let str = "";
+    var str = "";
 
     document.getElementById("current-word").textContent = " " + gameState.formatedWord.join("  ");
 
