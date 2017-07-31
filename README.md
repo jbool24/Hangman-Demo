@@ -1,11 +1,11 @@
 # HangMan Demo Game
 
-##Basic Hangman game
+## Basic Hangman game
 
 This is a simple demo of DOM manipulation without the use of jQuery.
 To play just press any key to begin then use keyboard to make guesses.
 
-###Game Requirements
+### Game Requirements
 
 1. Choose a theme for your game! In the demo, we picked an 80s theme: 80s questions, 80s sound and an 80s aesthetic. You can choose any subject for your theme, though, so be creative!
 
